@@ -1,0 +1,61 @@
+@import "tailwindcss";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Modern professional theme - Purple/Pink palette */
+:root {
+  --bg: #0f0a1e;           /* Deep purple-black */
+  --panel: #1a1332;        /* Card surface */
+  --surface: #221847;      /* Input/select bg */
+  --border: #2d1f5c;       /* Border purple */
+  --text: #f3f4f6;         /* Near white */
+  --muted: #a1a1aa;        /* Zinc-400 */
+  --primary: #8b5cf6;      /* Vibrant purple */
+  --accent: #ec4899;       /* Hot pink */
+  --ok: #10b981;           /* Emerald-500 */
+  --warn: #f59e0b;         /* Amber-500 */
+}
+
+html, body, #root { 
+  height: 100%; 
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background:
+    radial-gradient(1200px 700px at 15% 5%, rgba(139,92,246,.12), transparent 65%),
+    radial-gradient(1000px 650px at 85% 95%, rgba(236,72,153,.10), transparent 65%),
+    linear-gradient(180deg, var(--bg), #0a0618 50%, #0a0618 100%);
+  color: var(--text);
+  font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Smooth reveal animation */
+@keyframes fadeSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Shimmer loading effect */
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+/* Focus ring for accessibility */
+*:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
